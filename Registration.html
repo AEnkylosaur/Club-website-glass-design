@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#04050d">
+<title>Recruitment Portal · NanoNova Robotics Club</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- SPACE BACKDROP -->
+<div class="space" aria-hidden="true">
+    <div class="stars"></div>
+    <div class="stars stars-2"></div>
+    <div class="nebula n1"></div>
+    <div class="nebula n2"></div>
+    <div class="nebula n3"></div>
+    <div class="planet"></div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header glass">
+
+    <a class="brand" href="index.html">
+        <img src="assets/robotics-seal.png" alt="NanoNova Robotics Club seal">
+        <div>
+            <div class="brand-title">NANONOVA</div>
+            <div class="brand-sub">Recruitment interface</div>
+        </div>
+    </a>
+
+    <button type="button" class="menu-toggle" onclick="toggleMenu()"
+            aria-label="Toggle navigation" aria-controls="govNav" aria-expanded="false">☰</button>
+
+    <nav class="site-nav" id="govNav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="index.html#Heads">Department heads</a>
+        <a href="Registration.html" class="active nav-cta" aria-current="page">Join the club</a>
+    </nav>
+
+</header>
+
+<main class="form-shell glass">
+
+    <div class="form-intro">
+        <h1>Applicant registration</h1>
+        <p>
+            Welcome to the official recruitment intake system. Complete the form truthfully.
+            Not sure which department fits you? <a href="index.html#Heads">See who to ask first</a>.
+        </p>
+    </div>
+
+    <div class="notice lite">
+        <b aria-hidden="true">!</b>
+        <span>False information may result in denial.</span>
+    </div>
+
+    <form id="recruitment-form">
+
+        <fieldset class="form-section">
+            <legend>Personal details</legend>
+            <div class="fields">
+                <div class="field">
+                    <label for="surname">Surname</label>
+                    <input id="surname" type="text" name="surname" autocomplete="family-name" required>
+                </div>
+                <div class="field">
+                    <label for="firstname">First name</label>
+                    <input id="firstname" type="text" name="firstname" autocomplete="given-name" required>
+                </div>
+                <div class="field">
+                    <label for="middlename">Middle name <span style="opacity:.7">(optional)</span></label>
+                    <input id="middlename" type="text" name="middlename" autocomplete="additional-name">
+                </div>
+                <div class="field">
+                    <label for="age">Age</label>
+                    <input id="age" type="number" name="age" min="1" max="99" inputmode="numeric" required>
+                </div>
+                <div class="field">
+                    <label for="sex">Sex</label>
+                    <select id="sex" name="sex" required>
+                        <option value="">Select</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Prefer not to say">Prefer not to say</option>
+                    </select>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset class="form-section">
+            <legend>School</legend>
+            <div class="fields">
+                <div class="field">
+                    <label for="gradelevel">Grade level</label>
+                    <input id="gradelevel" type="text" name="gradelevel" required>
+                </div>
+                <div class="field">
+                    <label for="lrn">LRN</label>
+                    <input id="lrn" type="text" name="lrn" inputmode="numeric" required>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset class="form-section">
+            <legend>Contact</legend>
+            <div class="fields">
+                <div class="field field-wide">
+                    <label for="email">Gmail address</label>
+                    <input id="email" type="email" name="email" autocomplete="email" required>
+                </div>
+                <div class="field field-wide">
+                    <label for="address">Home address</label>
+                    <textarea id="address" name="address" autocomplete="street-address" required></textarea>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset class="form-section">
+            <legend>Your application</legend>
+            <div class="fields">
+                <div class="field field-wide">
+                    <label for="department">Department of choice</label>
+                    <select id="department" name="department" required>
+                        <option value="">Select department</option>
+                        <option value="Graphics">Graphics</option>
+                        <option value="Robotics">Robotics</option>
+                        <option value="Programming">Programming</option>
+                        <option value="Media">Media</option>
+                    </select>
+                </div>
+            </div>
+        </fieldset>
+
+        <div id="formMessage" class="form-message" role="status" aria-live="polite" hidden></div>
+
+        <button class="btn btn-primary submit-btn" type="submit">Submit application</button>
+
+    </form>
+
+</main>
+
+<footer class="site-footer">Recruitment System v1.0</footer>
+
+<script src="ui.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

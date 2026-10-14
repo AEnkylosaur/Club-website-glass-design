@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#04050d">
+<title>NanoNova Robotics Club</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- SPACE BACKDROP -->
+<div class="space" aria-hidden="true">
+    <div class="stars"></div>
+    <div class="stars stars-2"></div>
+    <div class="nebula n1"></div>
+    <div class="nebula n2"></div>
+    <div class="nebula n3"></div>
+    <div class="planet"></div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header glass">
+
+    <a class="brand" href="index.html">
+        <img src="assets/robotics-seal.png" alt="NanoNova Robotics Club seal">
+        <div>
+            <div class="brand-title">NANONOVA</div>
+            <div class="brand-sub">Robotics Club</div>
+        </div>
+    </a>
+
+    <button type="button" class="menu-toggle" onclick="toggleMenu()"
+            aria-label="Toggle navigation" aria-controls="govNav" aria-expanded="false">☰</button>
+
+    <nav class="site-nav" id="govNav" aria-label="Main">
+        <a href="index.html" class="active" data-nav="home" aria-current="page">Home</a>
+        <a href="#Heads" data-nav="heads">Department heads</a>
+        <a href="Registration.html" class="nav-cta">Join the club</a>
+    </nav>
+
+</header>
+
+<main class="shell">
+
+    <!-- HERO -->
+    <section class="hero glass">
+        <div class="hero-meta">
+            <span class="dot"></span>
+            <span>Terminal online · Programming Department · Sergio v001</span>
+        </div>
+
+        <h1>Build robots. Write the code. Reach further.</h1>
+        <p>
+            NanoNova is the robotics club of Manolo Fortich National High School.
+            Browse what we do, find the right department, and see who to talk to.
+        </p>
+
+        <div class="hero-actions">
+            <a class="btn btn-primary" href="Registration.html">Apply to join</a>
+            <a class="btn btn-ghost" href="#Heads">Meet the department heads</a>
+        </div>
+    </section>
+
+    <!-- TABS -->
+    <div class="tabs glass" role="tablist" aria-label="Sections" id="tabs">
+        <button type="button" class="tab active" role="tab" aria-selected="true"  data-tab="overview"    onclick="openTab('overview', this)">Overview</button>
+        <button type="button" class="tab"        role="tab" aria-selected="false" data-tab="Departments" onclick="openTab('Departments', this)">Departments</button>
+        <button type="button" class="tab"        role="tab" aria-selected="false" data-tab="Heads"       onclick="openTab('Heads', this)">Department heads</button>
+        <button type="button" class="tab"        role="tab" aria-selected="false" data-tab="ArticleII"   onclick="openTab('ArticleII', this)">Purpose &amp; goals</button>
+        <button type="button" class="tab"        role="tab" aria-selected="false" data-tab="website"     onclick="openTab('website', this)">Development logs</button>
+    </div>
+
+    <!-- MENU + CONTENT -->
+    <div class="layout">
+
+        <aside class="menu-panel glass" aria-label="Topics">
+
+            <div class="menu-page active-page" id="overview">
+                <div class="menu-heading">Overview</div>
+                <button type="button" class="menu-item sheen" data-log="homeData">Club overview</button>
+                <button type="button" class="menu-item sheen" data-log="preambleData">Preamble</button>
+            </div>
+
+            <div class="menu-page" id="Departments">
+                <div class="menu-heading">Departments</div>
+                <button type="button" class="menu-item sheen" data-log="RBoverview">Robotics</button>
+                <button type="button" class="menu-item sheen" data-log="PDoverview">Programming</button>
+                <button type="button" class="menu-item sheen" data-log="GDoverview">Graphics</button>
+                <button type="button" class="menu-item sheen" data-log="MDoverview">Media</button>
+            </div>
+
+            <div class="menu-page" id="Heads">
+                <div class="menu-heading">Who to approach</div>
+                <button type="button" class="menu-item sheen" data-log="headsAll">All department heads</button>
+                <button type="button" class="menu-item sheen" data-log="headsRobotics">Robotics head</button>
+                <button type="button" class="menu-item sheen" data-log="headsProgramming">Programming head</button>
+                <button type="button" class="menu-item sheen" data-log="headsGraphics">Graphics head</button>
+                <button type="button" class="menu-item sheen" data-log="headsMedia">Media head</button>
+            </div>
+
+            <div class="menu-page" id="ArticleII">
+                <div class="menu-heading">Purpose &amp; goals</div>
+                <button type="button" class="menu-item sheen" data-log="SectionA">Purpose and mission</button>
+                <button type="button" class="menu-item sheen" data-log="SectionB">Club goals</button>
+                <button type="button" class="menu-item sheen" data-log="SectionC">Vision</button>
+            </div>
+
+            <div class="menu-page" id="website">
+                <div class="menu-heading">Development logs</div>
+                <button type="button" class="menu-item sheen" data-log="LOGS1">Log 001</button>
+                <button type="button" class="menu-item sheen" data-log="LOGS2">Log 002</button>
+                <button type="button" class="menu-item sheen" data-log="LOGS3">Log 003</button>
+                <button type="button" class="menu-item sheen" data-log="LOGS4">Log 004</button>
+            </div>
+
+        </aside>
+
+        <section class="viewer glass" id="viewer" aria-live="polite">
+            <div id="logOutput" class="log-output">
+<div class="data-title">Welcome to NanoNova</div>
+Pick a topic from the menu to get started.
+            </div>
+        </section>
+
+    </div>
+
+</main>
+
+<footer class="site-footer">NanoNova Robotics Club · Manolo Fortich National High School</footer>
+
+<script src="ui.js"></script>
+<script src="script2.js"></script>
+
+</body>
+</html>
